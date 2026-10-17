@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segelelo Steel & Pumps | Mahikeng</title>
+  <meta name="description" content="Segelelo Steel & Pumps – quality water tanks, borehole pumps, irrigation, steel and more in Mahikeng Industrial.">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --ink: #0f1c2e;
+      --ink-soft: #3d4f66;
+      --ink-muted: #6b7c93;
+      --border: #dce1e8;
+      --border-strong: #b8c0cc;
+      --primary: #1a3a6e;        /* dark blue from SEGELELO */
+      --primary-dim: #122a52;
+      --primary-soft: #e8eef6;
+      --accent: #c41e3a;         /* red from STEEL & PUMPS */
+      --accent-soft: #fce8ec;
+      --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .inner {
+      max-width: 1140px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .logo-mark {
+      width: 44px; height: 44px; background: var(--primary);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 800; font-size: 1.1rem;
+    }
+    .logo-text strong { display: block; font-size: 1.05rem; font-weight: 800; }
+    .logo-text small {
+      font-size: 0.65rem; color: var(--primary); letter-spacing: 0.12em;
+      text-transform: uppercase; font-weight: 700;
+    }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 600; color: var(--ink-soft); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      background: var(--accent); color: white !important;
+      padding: 10px 20px; border-radius: 40px; font-weight: 700; font-size: 0.8rem;
+      box-shadow: 0 4px 14px rgba(26,58,110,0.25);
+    }
+    .nav-cta:hover { background: #a01830; }
+    .menu-toggle {
+      display: none; background: none; border: none; font-size: 1.5rem;
+      color: var(--primary); cursor: pointer;
+    }
+
+    .hero {
+      padding: 140px 24px 80px;
+      background: linear-gradient(180deg, #e8f0f8 0%, var(--bg) 100%);
+    }
+    .hero-grid {
+      max-width: 1140px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--primary); font-weight: 800; background: var(--primary-soft);
+      padding: 7px 16px; border-radius: 40px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.3rem); margin-bottom: 16px; color: var(--ink);
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--ink-soft); max-width: 520px;
+      margin-bottom: 30px; line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 26px; border-radius: 50px; font-weight: 700; font-size: 0.9rem;
+      transition: all 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent); color: white;
+      box-shadow: 0 6px 18px rgba(196,30,58,0.3);
+    }
+    .btn-primary:hover { background: #a01830; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--primary); border: 1.5px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary); color: white; }
+    .hero-trust {
+      display: flex; gap: 28px; flex-wrap: wrap;
+      padding-top: 28px; border-top: 1px solid var(--border);
+    }
+    .hero-trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.84rem; color: var(--ink-soft);
+    }
+    .hero-trust-item strong { color: var(--ink); font-weight: 800; }
+
+    .hero-visual { display: flex; flex-direction: column; gap: 12px; }
+    .info-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 18px 20px; display: flex; align-items: center; gap: 14px;
+      box-shadow: 0 6px 20px rgba(26,58,110,0.06); transition: transform 0.2s;
+    }
+    .info-card:hover { transform: translateX(-5px); }
+    .info-icon {
+      width: 44px; height: 44px; border-radius: 10px; background: var(--primary-soft);
+      color: var(--primary); display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .info-text h4 { font-size: 0.95rem; margin-bottom: 2px; }
+    .info-text p { font-size: 0.8rem; color: var(--ink-muted); }
+
+    .info-strip {
+      background: white; padding: 16px 24px;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .info-strip-inner {
+      max-width: 1140px; margin: 0 auto;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .info-strip-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; color: var(--ink-soft);
+    }
+    .info-strip-item strong { color: var(--ink); }
+
+    section { padding: 88px 24px; }
+    .container { max-width: 1140px; margin: 0 auto; }
+    .section-head { max-width: 640px; margin-bottom: 48px; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--primary); font-weight: 800; margin-bottom: 12px;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .section-label::before {
+      content: ""; width: 20px; height: 3px; background: var(--accent); border-radius: 2px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 12px;
+    }
+    .section-title span { color: var(--accent); }
+    .section-intro { color: var(--ink-soft); font-size: 1rem; line-height: 1.7; }
+
+    #about { background: white; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;
+    }
+    .about-visual {
+      aspect-ratio: 4/5; border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 16px 16px 0 var(--primary-soft);
+      color: white; font-size: 4rem;
+    }
+    .about-text p {
+      color: var(--ink-soft); margin-bottom: 14px; font-size: 0.98rem; line-height: 1.75;
+    }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+      margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--border);
+    }
+    .about-stat strong {
+      display: block; font-size: 1.5rem; color: var(--primary); font-weight: 800; margin-bottom: 4px;
+    }
+    .about-stat span {
+      font-size: 0.72rem; color: var(--ink-muted); text-transform: uppercase;
+      letter-spacing: 0.06em; font-weight: 600;
+    }
+
+    #products { background: var(--bg); }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;
+    }
+    .product-card {
+      background: white; border-radius: 14px; padding: 26px 22px;
+      border: 1px solid var(--border); transition: all 0.25s; position: relative; overflow: hidden;
+    }
+    .product-card::before {
+      content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(26,58,110,0.1);
+      border-color: var(--border-strong);
+    }
+    .product-card:hover::before { transform: scaleX(1); }
+    .product-icon {
+      width: 46px; height: 46px; border-radius: 10px; background: var(--primary-soft);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; margin-bottom: 14px;
+    }
+    .product-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
+    .product-card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55; }
+
+    #why { background: var(--ink); color: white; }
+    #why .section-label { color: var(--accent); }
+    #why .section-label::before { background: var(--accent); }
+    #why .section-title { color: white; }
+    #why .section-title span { color: var(--accent); }
+    #why .section-intro { color: rgba(255,255,255,0.7); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;
+    }
+    .why-item {
+      padding: 26px 22px; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; transition: all 0.25s;
+    }
+    .why-item:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(196,30,58,0.4);
+      transform: translateY(-3px);
+    }
+    .why-num {
+      font-size: 1.7rem; font-weight: 800; color: var(--accent); margin-bottom: 12px;
+    }
+    .why-item h3 { font-size: 1.02rem; color: white; margin-bottom: 8px; }
+    .why-item p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.55; }
+
+    #contact { background: var(--bg); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+    }
+    .contact-block { margin-bottom: 26px; }
+    .contact-block h4 {
+      font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+    }
+    .contact-block h4 span { color: var(--primary); }
+    .contact-block p, .contact-block a {
+      color: var(--ink-soft); font-size: 0.95rem; line-height: 1.65;
+    }
+    .contact-block a { font-weight: 600; }
+    .contact-block a:hover { color: var(--primary); }
+    .hours-list {
+      list-style: none; margin-top: 8px; background: white;
+      border-radius: 12px; padding: 6px 16px; border: 1px solid var(--border);
+    }
+    .hours-list li {
+      display: flex; justify-content: space-between; padding: 10px 0;
+      border-bottom: 1px dashed var(--border); font-size: 0.9rem; color: var(--ink-soft);
+    }
+    .hours-list li:last-child { border: none; }
+    .hours-list li strong { color: var(--ink); }
+    .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .map-embed {
+      width: 100%; aspect-ratio: 4/3; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border); background: var(--primary-soft);
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+    .cta-final {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white; text-align: center; padding: 80px 24px;
+    }
+    .cta-final h2 {
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin-bottom: 14px; color: white;
+    }
+    .cta-final p {
+      color: rgba(255,255,255,0.9); margin-bottom: 28px; font-size: 1.05rem;
+    }
+    .cta-final-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: white; color: var(--primary);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+    .btn-dark-outline {
+      background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.45);
+    }
+    .btn-dark-outline:hover { background: rgba(255,255,255,0.1); }
+
+    footer {
+      background: #0a1420; color: rgba(255,255,255,0.55);
+      padding: 48px 24px 24px; text-align: center;
+    }
+    .footer-logo { font-size: 1.2rem; font-weight: 800; color: white; margin-bottom: 6px; }
+    .footer-tag {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px; font-weight: 700;
+    }
+    .footer-links {
+      display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .footer-links a { font-size: 0.84rem; color: rgba(255,255,255,0.55); }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy {
+      font-size: 0.72rem; color: rgba(255,255,255,0.3);
+      padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .float-cta {
+      position: fixed; bottom: 20px; right: 20px; z-index: 90;
+      background: var(--accent); color: white; width: 56px; height: 56px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; box-shadow: 0 6px 22px rgba(196,30,58,0.4);
+      transition: transform 0.2s;
+    }
+    .float-cta:hover { transform: scale(1.08); }
+
+    .float-whatsapp {
+      position: fixed;
+      bottom: 88px;
+      right: 20px;
+      z-index: 90;
+      background: #25D366;
+      color: white;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+      transition: transform 0.2s;
+    }
+    .float-whatsapp:hover { transform: scale(1.08); }
+
+
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero { padding: 120px 20px 56px; }
+      .about-visual { aspect-ratio: 4/3; box-shadow: 12px 12px 0 var(--primary-soft); }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; background: white; padding: 18px; gap: 14px;
+        border-bottom: 1px solid var(--border); align-items: flex-start;
+        box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+      section { padding: 60px 20px; }
+      .info-strip-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="inner">
+      <a href="#top" class="nav-logo">
+        <div class="logo-mark" style="background:linear-gradient(135deg,#1a3a6e 0%,#c41e3a 100%)">S</div>
+        <div class="logo-text">
+          <strong>Segelelo</strong>
+          <small>Steel &amp; Pumps</small>
+        </div>
+      </a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+      <div class="nav-links">
+        <a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a>
+        <a href="#products" onclick="document.querySelector('.nav-links').classList.remove('open')">Products</a>
+        <a href="#why" onclick="document.querySelector('.nav-links').classList.remove('open')">Why Us</a>
+        <a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a>
+        <a href="tel:0183815928" class="nav-cta">Call Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">Mahikeng Industrial</div>
+        <h1>Quality steel, pumps &amp; <span>water solutions</span>.</h1>
+        <p class="hero-sub">
+          Segelelo Steel &amp; Pumps supplies water tanks, borehole pumps, irrigation equipment, steel and more — serving Mahikeng and surrounding areas with reliable products and friendly service.
+        </p>
+        <div class="hero-actions">
+          <a href="tel:0183815928" class="btn btn-primary">📞 018 381 5928</a>
+          <a href="#products" class="btn btn-outline">View Products</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span>📍</span>
+            <span><strong>Aerodrome Cres</strong>, Industrial</span>
+          </div>
+          <div class="hero-trust-item">
+            <span>🕒</span>
+            <span>Mon–Fri 8–5 · Sat 8–12</span>
+          </div>
+          <div class="hero-trust-item">
+            <span>💧</span>
+            <span>JoJo tanks &amp; pumps</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="info-card">
+          <div class="info-icon">💧</div>
+          <div class="info-text">
+            <h4>Water Tanks &amp; Stands</h4>
+            <p>JoJo and quality tank solutions</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">⚙️</div>
+          <div class="info-text">
+            <h4>Borehole &amp; Pressure Pumps</h4>
+            <p>Reliable pumping solutions</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🛠️</div>
+          <div class="info-text">
+            <h4>Steel &amp; Hardware</h4>
+            <p>Steel, tools &amp; accessories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="info-strip">
+    <div class="info-strip-inner">
+      <div class="info-strip-item">
+        <span>📍</span>
+        <span><strong>22 Aerodrome Crescent</strong>, Mafikeng Industrial</span>
+      </div>
+      <div class="info-strip-item">
+        <span>📞</span>
+        <span><strong>018 381 5928</strong> · 082 640 4193</span>
+      </div>
+      <div class="info-strip-item">
+        <span>🕒</span>
+        <span>Mon–Fri <strong>8 AM – 5 PM</strong> · Sat <strong>8 AM – 12 PM</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">🏗️</div>
+        <div class="about-text">
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">Trusted supplier in <span>Mahikeng</span>.</h2>
+          <p>
+            Segelelo Steel &amp; Pumps has been serving Mahikeng and neighbouring towns with quality products and practical advice. Customers come to us for reliable water tanks, pumps, irrigation and steel — at competitive prices.
+          </p>
+          <p>
+            We believe in friendly service and only stocking products we trust. Whether you need a borehole pump, a water tank stand, or hardware for a project, we’re here to help.
+          </p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <strong>Since 1999</strong>
+              <span>Established</span>
+            </div>
+            <div class="about-stat">
+              <strong>Industrial</strong>
+              <span>Mahikeng</span>
+            </div>
+            <div class="about-stat">
+              <strong>Wide Range</strong>
+              <span>Products</span>
+            </div>
+            <div class="about-stat">
+              <strong>Local</strong>
+              <span>Service</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">What We Supply</span>
+        <h2 class="section-title">Products you can <span>count on</span>.</h2>
+        <p class="section-intro">
+          From water storage to irrigation and steel — a practical range under one roof.
+        </p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon">💧</div>
+          <h3>Water Tanks &amp; Stands</h3>
+          <p>JoJo and quality water tanks with matching stands for homes and farms.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">⚙️</div>
+          <h3>Borehole Pumps</h3>
+          <p>Reliable borehole pumps for domestic and agricultural use.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🔧</div>
+          <h3>Pressure Pumps</h3>
+          <p>Pressure pumps and systems to keep water flowing where you need it.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🌿</div>
+          <h3>Irrigation Equipment</h3>
+          <p>Irrigation fittings, pipes and equipment for gardens and fields.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🚪</div>
+          <h3>Garage &amp; Gate Motors</h3>
+          <p>Garage doors, gate motors and related access solutions.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🏊</div>
+          <h3>Swimming Pool Accessories</h3>
+          <p>Pool equipment and accessories for maintenance and care.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🛠️</div>
+          <h3>Steel &amp; Hardware</h3>
+          <p>Steel supplies, tools and general hardware for projects.</p>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🎨</div>
+          <h3>Vehicle Paint &amp; Accessories</h3>
+          <p>Motor vehicle paint and related accessories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Why Segelelo</span>
+        <h2 class="section-title">Why customers keep <span>coming back</span>.</h2>
+        <p class="section-intro">
+          Practical products, fair prices and people who actually help.
+        </p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <h3>Wide product range</h3>
+          <p>Tanks, pumps, irrigation, steel and more — so you can get what you need in one place.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <h3>Local &amp; accessible</h3>
+          <p>Based in Mahikeng Industrial, easy to reach for customers from town and surrounding areas.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <h3>Quality focus</h3>
+          <p>We stock products we trust so you get value that lasts.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <h3>Helpful service</h3>
+          <p>Friendly staff ready to assist with advice and the right product for your need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Visit Us</span>
+        <h2 class="section-title">Come see us or <span>give us a call</span>.</h2>
+        <p class="section-intro">
+          We’re open Monday to Saturday. Call ahead or walk in — we’re happy to help.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-block">
+            <h4><span>📍</span> Address</h4>
+            <p>22 Aerodrome Crescent<br>Mafikeng Industrial<br>Mahikeng, 2745</p>
+          </div>
+          <div class="contact-block">
+            <h4><span>📞</span> Phone</h4>
+            <p><a href="tel:0183815928">018 381 5928</a><br>
+               <a href="tel:0826404193">082 640 4193</a> <span style="font-size:0.8em;color:var(--ink-muted)">(Mobile)</span></p>
+          </div>
+          <div class="contact-block">
+            <h4><span>🕒</span> Opening Hours</h4>
+            <ul class="hours-list">
+              <li><span>Monday – Friday</span> <strong>8:00 AM – 5:00 PM</strong></li>
+              <li><span>Saturday</span> <strong>8:00 AM – 12:00 PM</strong></li>
+              <li><span>Sunday</span> <strong>Closed</strong></li>
+            </ul>
+          </div>
+          <div class="contact-actions">
+            <a href="tel:0183815928" class="btn btn-primary">📞 Call Now</a>
+            <a href="https://www.google.com/maps?q=22+Aerodrome+Crescent,+Mafikeng+Industrial,+Mahikeng" class="btn btn-outline" target="_blank">🗺️ Directions</a>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=22+Aerodrome+Crescent,+Mafikeng+Industrial,+Mahikeng,+2745&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <h2>Need tanks, pumps or steel?</h2>
+    <p>Call Segelelo Steel &amp; Pumps — we’re ready to help.</p>
+    <div class="cta-final-actions">
+      <a href="tel:0183815928" class="btn btn-white">📞 018 381 5928</a>
+      <a href="https://www.google.com/maps?q=22+Aerodrome+Crescent,+Mafikeng+Industrial,+Mahikeng" class="btn btn-dark-outline" target="_blank">🗺️ Get Directions</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Segelelo Steel &amp; Pumps</div>
+    <div class="footer-tag">Mahikeng Industrial</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:0183815928">018 381 5928</a>
+    </div>
+    <div class="footer-copy">© 2026 Segelelo Steel &amp; Pumps. All rights reserved.</div>
+  </footer>
+
+  <a href="tel:0183815928" class="float-cta" aria-label="Call">📞</a>
+
+  <a href="https://wa.me/27826404193" class="float-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
